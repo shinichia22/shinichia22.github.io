@@ -37,3 +37,104 @@
     }
   }
 }
+
+
+// Menu Overlay
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; //the menu options will be hidden by default. 
+
+  &.show {
+    // when we click on the menu icon the show class creates that's when we want to show the oprions.
+    visibility: visible;
+  }
+
+  &-branding,
+  &-nav {
+    // we can write the as .menu-branding as well but this iis the shortcut.
+    display: flex;
+    flex-flow: column wrap; // this will create the columns 
+    align-items: center; //the inside items wiil be aligned
+    justify-content: center; //the columns width and space.
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; //not to have the scroll button by default. 
+  }
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5);
+    list-style: none;
+    transform: translate3d(0, -100%, 0); // this is for the navigation menu
+    @include easeOut;
+
+    &.show {
+      //slide in from the top
+      transform: translate3d(0, 0, 0); //if this is not there then the dropdown will not happen. 
+    }
+  }
+
+  //Branding side
+  &-branding {
+    background: $primary-color;
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+
+    &.show {
+      //slide in from the top
+      transform: translate3d(0, 0, 0); //if this is not there then the dropdown will not happen. 
+    }
+
+    .portrait {
+      width: 250px;
+      height: 250px;
+      background: url('../img/kakashi_smaller.jpg');
+      border-radius: 50%; // for circle background
+      border: solid 3px $secondary-color;
+    }
+  }
+
+  .nav-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    &.show {
+      //slide in from the right by the menu options
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current>a {
+      // for the first menu option to show the hover already as we already are in current page
+      color: $secondary-color;
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0; //left and right
+    color: #fff;
+    text-decoration: none;
+    @include easeOut;
+
+    &:hover {
+      color: $secondary-color
+    }
+  }
+
+}
+
+// delayyyy each nav item slide by 0.1 sec
+
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}
