@@ -6,7 +6,8 @@
 	"homepage": "https://Shinichi-A22.github.io/My_Porfolio",
 	"scripts": {
 		"sass": "node-sass -w scss/ -o dist/css/ --recursive",
-		"deploy": "gh-pages -d dist"
+		"deploy": "gh-pages -d dist",
+		"start": "node index.js"
 	},
 	"author": "Abhishek S",
 	"license": "MIT",
