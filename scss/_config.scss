@@ -32,6 +32,17 @@ $background-opacity : 0.9;
   }
 }
 
+// Set the text color as the name text will get hidden if color chaged to same one
+@function set-text-color ($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  }
+
+  @else {
+    @return #fff;
+  }
+}
+
 // media Quesry Mixins
 
 @mixin mediaSm {
