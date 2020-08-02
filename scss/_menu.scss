@@ -44,7 +44,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.95;
   visibility: hidden; //the menu options will be hidden by default. 
 
   &.show {
@@ -93,7 +93,7 @@
     .portrait {
       width: 250px;
       height: 250px;
-      background: url('../img/kakashi_smaller.jpg');
+      background: url('../img/pic.jpg');
       border-radius: 50%; // for circle background
       border: solid 3px $secondary-color;
     }

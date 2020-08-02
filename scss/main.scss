@@ -85,7 +85,7 @@ main {
   grid-template-areas:
     'bioimage bio bio' // bi bio is the bio should strecth across two cells
     'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr); // here 1fr mens one cell this will decide how many cell nedd to have in one column
+  grid-template-columns: repeat(2, 1fr); // here 1fr mens one cell this will decide how many cell nedd to have in one column
 
   .bio-image {
     grid-area: bioimage;
@@ -107,9 +107,9 @@ main {
     grid-area: job2
   }
 
-  .job-3 {
-    grid-area: job3
-  }
+  // .job-3 {
+  //   grid-area: job3
+  // }
 
   .job {
     background: lighten($primary-color, 5);
